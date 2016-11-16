@@ -1,6 +1,16 @@
 language: rust
+dist: trusty
 sudo: false
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-5
+
 script:
   - cargo build --verbose
   - cargo test --verbose
   - cargo doc
+  
